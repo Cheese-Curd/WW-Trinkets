@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aia",
+    "aaa"
+  ],
+  "key": {
+    "a": "wwtrinkets:amethyst_shard",
+    "f": "create:filter"
+  },
+  "result": {
+    "item": "wwtrinkets:air_filter",
+    "count": 1
+  }
+}

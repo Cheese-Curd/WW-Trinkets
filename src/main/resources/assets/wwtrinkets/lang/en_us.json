@@ -1,0 +1,14 @@
+{
+  "itemGroup.wwtrinkets.wwtrinkets_tab": "W.W. Trinkets",
+
+  "item.wwtrinkets.gas_mask": "Gas Mask",
+  "item.wwtrinkets.air_filter": "Air Filter",
+  "item.wwtrinkets.side_filter": "Side Filter",
+  "item.wwtrinkets.lens": "Gas Mask Lens",
+
+  "item.wwtrinkets.zumo_ring": "§5§l§oCursed Ring of The Aesir",
+  "item.wwtrinkets.amethyst_ingot": "Amethyst Infused Iron Ingot",
+  "effect.wwtrinkets.fall": "Fall Resistance",
+  "effect.wwtrinkets.suffocation": "Suffocation Resistance",
+  "effect.wwtrinkets.starvation": "Starvation Resistance"
+}

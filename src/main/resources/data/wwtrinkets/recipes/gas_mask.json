@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "kkk",
+    "lkl",
+    "sfs"
+  ],
+  "key": {
+    "k": "minecraft:dried_kelp",
+    "f": "wwtrinkets:air_filter",
+    "l": "wwtrinkets:lens",
+    "s": "wwtrinkets:side_filter"
+  },
+  "result": {
+    "item": "wwtrinkets:gas_mask",
+    "count": 1
+  }
+}

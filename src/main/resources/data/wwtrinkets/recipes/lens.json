@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+    "igi",
+    " i "
+  ],
+  "key": {
+    "g": "minecraft:purple_stained_glass_pane",
+    "i": "minecraft:iron_ingot"
+  },
+  "result": {
+    "item": "wwtrinkets:lens",
+    "count": 1
+  }
+}

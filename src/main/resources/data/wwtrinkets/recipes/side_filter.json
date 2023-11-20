@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "ifi",
+    "iii"
+  ],
+  "key": {
+    "i": "minecraft:iron_ingot",
+    "f": "wwtrinkets:air_filter"
+  },
+  "result": {
+    "item": "wwtrinkets:side_filter",
+    "count": 1
+  }
+}
