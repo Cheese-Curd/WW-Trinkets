@@ -3,12 +3,12 @@
 	"id": "ww-trinkets",
 	"version": "${version}",
 	"name": "W.W. Trinkets",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "It's cold out there, but doesn't mean you can't have some style!",
 	"authors": [
-		"Me!"
+		"Eliana - Developer",
+		"Mlodziak00 - Trinket Rendering [Thank you so muchhhhhhhh <3333333]"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"io.github.cheesecurd.wwtrinkets.WWTrinkets"
+		],
+		"client": [
+			"io.github.cheesecurd.wwtrinkets.client.WWTrinketsClient"
 		]
 	},
 	"mixins": [

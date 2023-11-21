@@ -10,6 +10,7 @@ import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.render.model.json.ModelTransformation;
+import net.minecraft.util.math.Quaternion;
 import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
 
 public class WWTrinketsClient implements ClientModInitializer
@@ -25,6 +26,8 @@ public class WWTrinketsClient implements ClientModInitializer
 	{
 		// Create GeckoLib Item Render
 		GeoItemRenderer.registerItemRenderer(ModItems.gas_mask, new GasMaskRenderer());
+//		GeoItemRenderer.registerItemRenderer(ModItems.golden_gauntlet, new GoldenGauntletRenderer());
+//		GeoItemRenderer.registerItemRenderer(ModItems.zumo_ring, new ZumoRingRenderer());
 
 		// Render Item
 		TrinketRendererRegistry.registerRenderer(ModItems.gas_mask,
@@ -32,8 +35,9 @@ public class WWTrinketsClient implements ClientModInitializer
 					if (entity instanceof AbstractClientPlayerEntity player) {
 						TrinketRenderer.translateToFace(matrices,
 								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
-						matrices.scale(0.5F, 0.5F, 0.5F);
-						matrices.translate(1.0F, -0.85F, 0.0F);
+						matrices.scale(0.62F, 0.62F, 0.62F);
+						matrices.translate(0, 0, 0.5F);
+						matrices.multiply(new Quaternion(0, 0, 180, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.HEAD, light, OverlayTexture.DEFAULT_UV, matrices,
 										vertexConsumers, 0);

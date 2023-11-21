@@ -2,8 +2,8 @@
 	"credit": "Eliana",
 	"texture_size": [48, 48],
 	"textures": {
-		"0": "gasmask",
-		"particle": "gasmask"
+		"0": "wwtrinkets:item/gas_mask",
+		"particle": "wwtrinkets:item/gas_mask"
 	},
 	"elements": [
 		{
