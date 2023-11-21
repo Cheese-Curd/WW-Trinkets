@@ -41,6 +41,7 @@ public class GasMask extends CosmeticTrinketItem
 		var modifiers = super.getModifiers(stack, slot, entity, uuid);
 		// Upsides
 		modifiers.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, new EntityAttributeModifier(uuid, "wwtrinkets:extra_health", .15, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+		modifiers.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(uuid, "wwtrinkets:extra_health", .15, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
 		return modifiers;
 	}
 
@@ -50,7 +51,7 @@ public class GasMask extends CosmeticTrinketItem
 		tooltip.add(Text.literal("§d§oDon't keep it on for too long! You might start to believe fresh air is §2§o§ka§a§l§otoxic§2§l§o§ka§d§o..."));
 		tooltip.add(Text.literal("§k---------------------------------------------------------------------"));
 		tooltip.add(Text.literal("§8§l•§c§l§o [-]§c Your breathing blocks your sight"));
-		tooltip.add(Text.literal("§8§l•§a§l§o [+]§a Your oxygen supply becomes superior than the outdoors"));
+		tooltip.add(Text.literal("§8§l•§a§l§o [+]§a You become faster in more way than one"));
 		tooltip.add(Text.literal("§8§l•§a§l§o [+]§a You do not feel the need to eat for a short time"));
 	}
 }

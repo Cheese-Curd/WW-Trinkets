@@ -4,6 +4,7 @@ import dev.emi.trinkets.api.client.TrinketRenderer;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import io.github.cheesecurd.wwtrinkets.Items.ModItems;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.GasMaskRenderer;
+import io.github.cheesecurd.wwtrinkets.Items.renderer.ZumoRingRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -27,7 +28,7 @@ public class WWTrinketsClient implements ClientModInitializer
 		// Create GeckoLib Item Render
 		GeoItemRenderer.registerItemRenderer(ModItems.gas_mask, new GasMaskRenderer());
 //		GeoItemRenderer.registerItemRenderer(ModItems.golden_gauntlet, new GoldenGauntletRenderer());
-//		GeoItemRenderer.registerItemRenderer(ModItems.zumo_ring, new ZumoRingRenderer());
+		GeoItemRenderer.registerItemRenderer(ModItems.zumo_ring, new ZumoRingRenderer());
 
 		// Render Item
 		TrinketRendererRegistry.registerRenderer(ModItems.gas_mask,
@@ -40,6 +41,19 @@ public class WWTrinketsClient implements ClientModInitializer
 						matrices.multiply(new Quaternion(0, 0, 180, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.HEAD, light, OverlayTexture.DEFAULT_UV, matrices,
+										vertexConsumers, 0);
+					}
+				});
+		TrinketRendererRegistry.registerRenderer(ModItems.zumo_ring,
+				(stack, slotReference, contextModel, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch) -> {
+					if (entity instanceof AbstractClientPlayerEntity player) {
+						TrinketRenderer.translateToFace(matrices,
+								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
+						matrices.scale(0.62F, 0.62F, 0.62F);
+						matrices.translate(0, 0, 0.5F);
+						matrices.multiply(new Quaternion(0, 0, 180, true));
+						MinecraftClient.getInstance().getItemRenderer()
+								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,
 										vertexConsumers, 0);
 					}
 				});

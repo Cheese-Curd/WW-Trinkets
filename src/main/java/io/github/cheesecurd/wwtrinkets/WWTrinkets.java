@@ -62,4 +62,26 @@ public class WWTrinkets implements ModInitializer {
 		}
 		matrices.translate(0.0F, -0.25F, -0.3F);
 	}
+
+	public static void armTrinket(MatrixStack matrices, EntityModel<? extends LivingEntity> model,
+								   LivingEntity entity, float armYaw, float armPitch) {
+
+		if (entity.isInSwimmingPose() || entity.isFallFlying()) {
+			if(model instanceof PlayerEntityModel)
+			{
+				PlayerEntityModel<AbstractClientPlayerEntity> ctx = (PlayerEntityModel<AbstractClientPlayerEntity>) model;
+				matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(ctx.leftArm.roll));
+			}
+			matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(armYaw));
+			matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(-45.0F));
+		} else {
+
+			if (entity.isInSneakingPose() && !model.riding) {
+				matrices.translate(0.0F, 0.25F, 0.0F);
+			}
+			matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(armYaw));
+			matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(armPitch));
+		}
+		matrices.translate(0.0F, -0.25F, -0.3F);
+	}
 }
