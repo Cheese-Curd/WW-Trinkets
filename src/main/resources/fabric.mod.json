@@ -6,10 +6,10 @@
 	"description": "It's cold out there, but doesn't mean you can't have some style!",
 	"authors": [
 		"Eliana - Developer",
-		"Mlodziak00 - Trinket Rendering [Thank you so muchhhhhhhh <3333333]"
+		"Mlodziak00 - Trinket Rendering / General Help [Thank you so muchhhhhhhh <3333]"
 	],
 	"contact": {
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Cheese-Curd/WW-Trinkets"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/ww-trinkets/icon.png",
@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"io.github.cheesecurd.wwtrinkets.client.WWTrinketsClient"
+		],
+		"modmenu": [
+			"io.github.cheesecurd.wwtrinkets.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
@@ -29,9 +32,12 @@
 		"fabricloader": ">=0.14.24",
 		"minecraft": "~1.19.2",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"geckolib3": ">=3.1.18",
+		"trinkets": ">=3.4.0",
+		"cloth-config": ">=8.3.103"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"sodium": "*"
 	}
 }
