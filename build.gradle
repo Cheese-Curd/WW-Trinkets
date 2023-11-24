@@ -16,6 +16,8 @@ repositories {
 	maven { url = 'https://maven.ladysnake.org/releases' }
 	// GL3
 	maven { url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+	// Cloth Config
+	maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
@@ -35,6 +37,16 @@ dependencies {
 
 	// GL3
 	modImplementation "software.bernie.geckolib:geckolib-fabric-1.19:3.1.18"
+
+	// Cloth Config
+	modApi "me.shedaniel.cloth:cloth-config-fabric:8.3.103"
+}
+
+// Thanks Gradle for thinking I have multiple of *something*
+configurations.all {
+	resolutionStrategy {
+		force("net.fabricmc:fabric-loader:$loader_version")
+	}
 }
 
 processResources {
