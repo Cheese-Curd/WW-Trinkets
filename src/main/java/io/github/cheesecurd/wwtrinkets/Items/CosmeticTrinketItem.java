@@ -22,10 +22,27 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class CosmeticTrinketItem extends TrinketItem implements IAnimatable, TrinketRenderer
 {
+	private static boolean equipped = false;
 	public AnimationFactory factory = new AnimationFactory(this);
 
 	public CosmeticTrinketItem(Settings settings) {
 		super(settings);
+	}
+
+	public static boolean isEquipped() { return equipped; }
+
+	@Override
+	public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity)
+	{
+		equipped = true;
+		super.onEquip(stack, slot, entity);
+	}
+
+	@Override
+	public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity)
+	{
+		equipped = false;
+		super.onUnequip(stack, slot, entity);
 	}
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -35,18 +52,17 @@ public class CosmeticTrinketItem extends TrinketItem implements IAnimatable, Tri
 	}
 
 	@Override
-	public void registerControllers(AnimationData animationData) {
+	public void registerControllers(AnimationData animationData)
+	{
 		animationData.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
 	}
 
 	@Override
-	public AnimationFactory getFactory() {
-		return factory;
-	};
+	public AnimationFactory getFactory() { return factory; };
 
 	@Override
-	public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
-
+	public void tick(ItemStack stack, SlotReference slot, LivingEntity entity)
+	{
 		if (entity.isOnGround()) {
 			Vec3d vel = entity.getVelocity();
 			entity.setVelocity(vel.x * 1.2, vel.y, vel.z * 1.2);
@@ -58,13 +74,12 @@ public class CosmeticTrinketItem extends TrinketItem implements IAnimatable, Tri
 			entity.setVelocity(vel.x, vel.y, vel.z);
 		}
 
-
-
 		super.tick(stack, slot, entity);
 	}
 
 	@Override
-	public void render(ItemStack stack, SlotReference slotReference, EntityModel<? extends LivingEntity> contextModel, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, LivingEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
+	public void render(ItemStack stack, SlotReference slotReference, EntityModel<? extends LivingEntity> contextModel, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, LivingEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch)
+	{
 		ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 		WWTrinkets.headTrinket(matrices,contextModel,entity,headYaw,headPitch);
 	}
