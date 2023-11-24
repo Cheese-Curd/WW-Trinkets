@@ -36,7 +36,7 @@ public class WWTrinkets implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Breathe in... Breathe out...");
-		GeckoLib.initialize();
+		GeckoLib.initialize(); // Init GL3
 		ModItems.registerItems(); // Register Items
 		ModEffects.registerEffects(); // Register Effects
 	}

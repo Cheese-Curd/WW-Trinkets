@@ -25,7 +25,7 @@ public class ModItems
 		return Registry.register(Registry.ITEM, new Identifier("wwtrinkets", itemName), item);
 	}
 
-	// Gas Mask Stuff
+	// Gas Mask
 	public static final Item gas_mask = createItem("gas_mask",
 			new GasMask(new FabricItemSettings()
 					.group(WWTrinkets.TAB)
