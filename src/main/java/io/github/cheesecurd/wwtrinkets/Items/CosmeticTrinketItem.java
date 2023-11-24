@@ -22,27 +22,10 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class CosmeticTrinketItem extends TrinketItem implements IAnimatable, TrinketRenderer
 {
-	private static boolean equipped = false;
 	public AnimationFactory factory = new AnimationFactory(this);
 
 	public CosmeticTrinketItem(Settings settings) {
 		super(settings);
-	}
-
-	public static boolean isEquipped() { return equipped; }
-
-	@Override
-	public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity)
-	{
-		equipped = true;
-		super.onEquip(stack, slot, entity);
-	}
-
-	@Override
-	public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity)
-	{
-		equipped = false;
-		super.onUnequip(stack, slot, entity);
 	}
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {

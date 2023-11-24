@@ -29,8 +29,9 @@ public class InGameHudMixin
 		// Is the Gas Mask on the Player's face?
 		if (client.options.getPerspective().isFirstPerson())
 		{
-			if (GasMask.isEquipped())
-				renderOverlay(GASMASK, 1.0F);
+			// TODO: Check if Gas Mask is equipped
+//			if (GasMask.isEquipped())
+//				renderOverlay(GASMASK, 1.0F);
 		}
 	}
 }
