@@ -12,7 +12,7 @@
 		"sources": "https://github.com/Cheese-Curd/WW-Trinkets"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/ww-trinkets/icon.png",
+	"icon": "assets/wwtrinkets/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
