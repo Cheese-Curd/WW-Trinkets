@@ -2,6 +2,8 @@ package io.github.cheesecurd.wwtrinkets.Items;
 
 import io.github.cheesecurd.wwtrinkets.WWTrinkets;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -34,6 +36,28 @@ public class ModItems
 	public static final Item side_filter = createItem("side_filter",
 			new Item(new FabricItemSettings()
 					.group(WWTrinkets.TAB)));
+
+	// Hazmat Suit
+	public static final Item hazmat_hood = createItem("hazmat_hood",
+			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+	public static final Item hazmat_suit = createItem("hazmat_suit",
+			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.CHEST,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+	public static final Item hazmat_pants = createItem("hazmat_pants",
+			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.LEGS,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+	public static final Item hazmat_boots = createItem("hazmat_boots",
+			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.FEET,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
 
 	// Cursed Ring of The Aesir
 	public static final Item zumo_ring = createItem("zumo_ring",

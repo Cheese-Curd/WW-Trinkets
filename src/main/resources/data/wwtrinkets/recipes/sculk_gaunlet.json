@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "wwtrinkets:golden_gauntlet"
+  },
+  "addition": {
+    "item": "wwtrinkets:sculk_gem"
+  },
+  "result": {
+    "item": "wwtrinkets:golden_gauntlet",
+    "crystal": "sculk"
+  }
+}

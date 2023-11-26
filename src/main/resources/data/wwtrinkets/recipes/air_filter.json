@@ -2,12 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "aaa",
-    "aia",
+    "afa",
     "aaa"
   ],
   "key": {
-    "a": "wwtrinkets:amethyst_shard",
-    "f": "create:filter"
+    "a": {
+      "item": "wwtrinkets:amethyst_shard"
+    },
+    "f": {
+      "item": "create:filter"
+    }
   },
   "result": {
     "item": "wwtrinkets:air_filter",

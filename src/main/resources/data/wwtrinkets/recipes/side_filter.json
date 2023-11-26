@@ -6,8 +6,12 @@
     "iii"
   ],
   "key": {
-    "i": "minecraft:iron_ingot",
-    "f": "wwtrinkets:air_filter"
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "f": {
+      "item": "wwtrinkets:air_filter"
+    }
   },
   "result": {
     "item": "wwtrinkets:side_filter",

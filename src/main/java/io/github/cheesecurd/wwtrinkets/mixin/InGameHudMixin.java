@@ -30,10 +30,10 @@ public class InGameHudMixin
 	@Inject(method = "render", at = @At("HEAD"))
 	void beforeHudRender(MatrixStack matrices, float tickDelta, CallbackInfo ci)
 	{
+		RenderSystem.enableBlend();
 		var width = client.getWindow().getScaledWidth();
 		var height = client.getWindow().getScaledHeight();
 
-		// Has no transparency, will use this instead of GasMaskOverlay when fixed
 		if (this.client.options.getPerspective().isFirstPerson()) {
 			if (!this.client.player.isUsingSpyglass())
 			{

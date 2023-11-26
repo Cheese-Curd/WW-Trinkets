@@ -5,15 +5,15 @@ import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import io.github.cheesecurd.wwtrinkets.Items.ModItems;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.GasMaskRenderer;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.ZumoRingRenderer;
-import io.github.cheesecurd.wwtrinkets.handlers.GasMaskOverlay;
+import io.github.cheesecurd.wwtrinkets.Items.renderer.armor.HazMatSuitRenderer;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.util.math.Quaternion;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
 
 public class WWTrinketsClient implements ClientModInitializer
@@ -27,8 +27,12 @@ public class WWTrinketsClient implements ClientModInitializer
 	@Override
 	public void onInitializeClient()
 	{
-		// Gas Mask Overlay [ Temp ]
-		 HudRenderCallback.EVENT.register(new GasMaskOverlay());
+		// Geckolib Armor Rendering
+		GeoArmorRenderer.registerArmorRenderer(new HazMatSuitRenderer(),
+				ModItems.hazmat_hood,
+				ModItems.hazmat_suit,
+				ModItems.hazmat_pants,
+				ModItems.hazmat_boots);
 
 		// Create GeckoLib Item Render
 		GeoItemRenderer.registerItemRenderer(ModItems.gas_mask, new GasMaskRenderer());
