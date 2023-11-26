@@ -15,6 +15,7 @@ public class GasMaskOverlay implements HudRenderCallback
 {
 	private static final Identifier GASMASK = new Identifier("wwtrinkets", "textures/overlays/gasmask.png");
 
+	// This goes over the hud, but this is as close to finished as this has been so far
 	@Override
 	public void onHudRender(MatrixStack matrixStack, float tickDelta) {
 		MinecraftClient client = MinecraftClient.getInstance();

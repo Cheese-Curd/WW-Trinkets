@@ -28,16 +28,23 @@ public class InGameHudMixin
 	@Shadow @Final private MinecraftClient client;
 
 	@Inject(method = "render", at = @At("HEAD"))
-	public void render(MatrixStack matrices, float tickDelta, CallbackInfo ci)
+	void beforeHudRender(MatrixStack matrices, float tickDelta, CallbackInfo ci)
 	{
-		// Is the Gas Mask on the Player's face?
+		var width = client.getWindow().getScaledWidth();
+		var height = client.getWindow().getScaledHeight();
+
+		// Has no transparency, will use this instead of GasMaskOverlay when fixed
 		if (this.client.options.getPerspective().isFirstPerson()) {
 			if (!this.client.player.isUsingSpyglass())
 			{
 				TrinketComponent comp = TrinketsApi.getTrinketComponent(client.player).get();
 				if (comp.isEquipped(ModItems.gas_mask))
 				{
-					renderOverlay(GASMASK, 1.0F);
+					// Rending overlays are goofy
+					RenderSystem.setShader(GameRenderer::getPositionTexShader);
+					RenderSystem.setShaderColor(1,1, 1, 1);
+					RenderSystem.setShaderTexture(0, GASMASK);
+					DrawableHelper.drawTexture(matrices, 0, 0, 0, 0, width, height, width, height);
 				}
 			}
 		}

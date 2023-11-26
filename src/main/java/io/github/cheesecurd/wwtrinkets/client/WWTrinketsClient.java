@@ -27,7 +27,7 @@ public class WWTrinketsClient implements ClientModInitializer
 	@Override
 	public void onInitializeClient()
 	{
-		// Gas Mask Overlay
+		// Gas Mask Overlay [ Temp ]
 		 HudRenderCallback.EVENT.register(new GasMaskOverlay());
 
 		// Create GeckoLib Item Render
