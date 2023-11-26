@@ -49,7 +49,7 @@ public class GasMask extends CosmeticTrinketItem
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
 	{
 		tooltip.add(Text.literal("§d§oDon't keep it on for too long! You might start to believe fresh air is §2§o§ka§a§l§otoxic§2§l§o§ka§d§o..."));
-		tooltip.add(Text.literal("§k---------------------------------------------------------------------"));
+		tooltip.add(Text.literal("§k-------------------------------------------------------------------------------"));
 		tooltip.add(Text.literal("§8§l•§c§l§o [-]§c Your breathing blocks your sight"));
 		tooltip.add(Text.literal("§8§l•§a§l§o [+]§a You become faster in more way than one"));
 		tooltip.add(Text.literal("§8§l•§a§l§o [+]§a You do not feel the need to eat for a short time"));
