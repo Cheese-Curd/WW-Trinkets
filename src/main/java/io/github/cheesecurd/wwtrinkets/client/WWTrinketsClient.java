@@ -5,7 +5,9 @@ import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import io.github.cheesecurd.wwtrinkets.Items.ModItems;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.GasMaskRenderer;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.ZumoRingRenderer;
+import io.github.cheesecurd.wwtrinkets.handlers.GasMaskOverlay;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.OverlayTexture;
@@ -25,6 +27,9 @@ public class WWTrinketsClient implements ClientModInitializer
 	@Override
 	public void onInitializeClient()
 	{
+		// Gas Mask Overlay
+		 HudRenderCallback.EVENT.register(new GasMaskOverlay());
+
 		// Create GeckoLib Item Render
 		GeoItemRenderer.registerItemRenderer(ModItems.gas_mask, new GasMaskRenderer());
 //		GeoItemRenderer.registerItemRenderer(ModItems.golden_gauntlet, new GoldenGauntletRenderer());
@@ -36,8 +41,8 @@ public class WWTrinketsClient implements ClientModInitializer
 					if (entity instanceof AbstractClientPlayerEntity player) {
 						TrinketRenderer.translateToFace(matrices,
 								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
-						matrices.scale(0.65F, 0.65F, 0.65F);
-						matrices.translate(0, 0, 0.25F);
+						matrices.scale(0.62F, 0.62F, 0.62F);
+						matrices.translate(0, 0, 0.5F);
 						matrices.multiply(new Quaternion(0, 0, 180, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.HEAD, light, OverlayTexture.DEFAULT_UV, matrices,

@@ -1,8 +1,14 @@
 package io.github.cheesecurd.wwtrinkets.Items;
 
 import com.google.common.collect.Multimap;
+import com.mojang.blaze3d.systems.RenderSystem;
 import dev.emi.trinkets.api.SlotReference;
+import dev.emi.trinkets.api.TrinketComponent;
+import dev.emi.trinkets.api.TrinketsApi;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -11,14 +17,19 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.UUID;
 
+import static net.minecraft.client.gui.DrawableHelper.*;
+
 public class GasMask extends CosmeticTrinketItem
 {
+	private MinecraftClient client = MinecraftClient.getInstance();
+
 	public GasMask(Settings settings) {
 		super(settings);
 	}
