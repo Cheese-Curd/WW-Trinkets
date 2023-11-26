@@ -23,7 +23,7 @@ public class InGameHudMixin
 	@Shadow @Final private MinecraftClient client;
 	private static final Identifier GASMASK = new Identifier("wwtrinkets", "textures/overlays/gasmask.png");
 
-	@Inject(method = "render", at = @At("TAIL"))
+	@Inject(method = "render", at = @At("HEAD"))
 	public void render(MatrixStack matrices, float tickDelta, CallbackInfo ci)
 	{
 		// Is the Gas Mask on the Player's face?
