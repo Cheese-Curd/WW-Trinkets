@@ -1,11 +1,11 @@
 package io.github.cheesecurd.wwtrinkets.mixin;
 
-import io.github.cheesecurd.wwtrinkets.Items.GasMask;
+import dev.emi.trinkets.api.TrinketComponent;
+import dev.emi.trinkets.api.TrinketsApi;
 import io.github.cheesecurd.wwtrinkets.Items.ModItems;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
-
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,11 +27,16 @@ public class InGameHudMixin
 	public void render(MatrixStack matrices, float tickDelta, CallbackInfo ci)
 	{
 		// Is the Gas Mask on the Player's face?
-		if (client.options.getPerspective().isFirstPerson())
-		{
-			// TODO: Check if Gas Mask is equipped
-//			if (GasMask.isEquipped())
-//				renderOverlay(GASMASK, 1.0F);
+		if (this.client.options.getPerspective().isFirstPerson()) {
+			if (!this.client.player.isUsingSpyglass())
+			{
+				TrinketComponent comp = TrinketsApi.getTrinketComponent(client.player).get();
+				if (comp.isEquipped(ModItems.gas_mask))
+				{
+					// Rending overlays are goofy
+					this.renderOverlay(GASMASK, 1.0F);
+				}
+			}
 		}
 	}
 }

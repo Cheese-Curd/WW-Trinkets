@@ -31,6 +31,9 @@ dependencies {
 
 	// Trinkets
 	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
+	// THIS ISN'T IN THE FUCKING THE GRADLE TEMPLATE FOR TRINKETS WHAT THE FUCK MAN
+	modImplementation include("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cca_version}")
+	modImplementation include("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cca_version}")
 
 	// ModMenu
 	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
