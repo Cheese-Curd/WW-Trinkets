@@ -17,6 +17,6 @@ public class ZumoRingModel extends AnimatedGeoModel<ZumoRing> {
 
 	@Override
 	public Identifier getAnimationResource(ZumoRing animatable) {
-		return new Identifier("wwtrikets", "animations/zumo_ring.animation.json");
+		return new Identifier("wwtrikets", "animations/dummy.json");
 	}
 }
