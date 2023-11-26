@@ -36,8 +36,8 @@ public class WWTrinketsClient implements ClientModInitializer
 					if (entity instanceof AbstractClientPlayerEntity player) {
 						TrinketRenderer.translateToFace(matrices,
 								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
-						matrices.scale(0.62F, 0.62F, 0.62F);
-						matrices.translate(0, 0, 0.5F);
+						matrices.scale(0.65F, 0.65F, 0.65F);
+						matrices.translate(0, 0, 0.25F);
 						matrices.multiply(new Quaternion(0, 0, 180, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.HEAD, light, OverlayTexture.DEFAULT_UV, matrices,
@@ -47,10 +47,10 @@ public class WWTrinketsClient implements ClientModInitializer
 		TrinketRendererRegistry.registerRenderer(ModItems.zumo_ring,
 				(stack, slotReference, contextModel, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch) -> {
 					if (entity instanceof AbstractClientPlayerEntity player) {
-						TrinketRenderer.translateToFace(matrices,
-								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
-						matrices.scale(0.62F, 0.62F, 0.62F);
-						matrices.translate(0, 0, 0.5F);
+						TrinketRenderer.translateToLeftArm(matrices,
+								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player);
+						matrices.scale(1.25F, 1.25F, 1.25F);
+						matrices.translate(0, -0.1, -0.05);
 						matrices.multiply(new Quaternion(0, 0, 180, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,

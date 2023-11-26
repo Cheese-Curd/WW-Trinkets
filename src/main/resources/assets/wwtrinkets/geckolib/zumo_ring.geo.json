@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.RingOfCurses - Converted",
+				"identifier": "zumo_ring",
 				"texture_width": 7,
 				"texture_height": 10,
 				"visible_bounds_width": 2,
@@ -40,7 +40,7 @@
 							}
 						},
 						{
-							"origin": [-0.8, 0.95, -2.275],
+							"origin": [-0.8, 0.95, -2.35],
 							"size": [1.6, 1.6, 0.35],
 							"uv": {
 								"north": {"uv": [0, 1], "uv_size": [3.975, 4]}
