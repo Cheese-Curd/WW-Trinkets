@@ -3,6 +3,7 @@
     "player"
   ],
   "slots": [
+    "head/hat",
     "head/face",
     "offhand/ring",
     "offhand/glove"

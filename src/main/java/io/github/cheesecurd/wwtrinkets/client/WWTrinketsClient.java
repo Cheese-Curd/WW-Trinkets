@@ -4,6 +4,7 @@ import dev.emi.trinkets.api.client.TrinketRenderer;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import io.github.cheesecurd.wwtrinkets.Items.ModItems;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.GasMaskRenderer;
+import io.github.cheesecurd.wwtrinkets.Items.renderer.TopHatRenderer;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.ZumoRingRenderer;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.armor.HazMatSuitRenderer;
 import net.fabricmc.api.ClientModInitializer;
@@ -38,6 +39,8 @@ public class WWTrinketsClient implements ClientModInitializer
 		GeoItemRenderer.registerItemRenderer(ModItems.gas_mask, new GasMaskRenderer());
 //		GeoItemRenderer.registerItemRenderer(ModItems.golden_gauntlet, new GoldenGauntletRenderer());
 		GeoItemRenderer.registerItemRenderer(ModItems.zumo_ring, new ZumoRingRenderer());
+		// Cosmetics
+		GeoItemRenderer.registerItemRenderer(ModItems.tophat, new TopHatRenderer());
 
 		// Render Item
 		TrinketRendererRegistry.registerRenderer(ModItems.gas_mask,
@@ -60,9 +63,23 @@ public class WWTrinketsClient implements ClientModInitializer
 								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player);
 						matrices.scale(1.25F, 1.25F, 1.25F);
 						matrices.translate(0, -0.1, -0.05);
-						matrices.multiply(new Quaternion(0, 0, 180, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,
+										vertexConsumers, 0);
+					}
+				});
+
+		// Cosmetics
+		TrinketRendererRegistry.registerRenderer(ModItems.tophat,
+				(stack, slotReference, contextModel, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch) -> {
+					if (entity instanceof AbstractClientPlayerEntity player) {
+						TrinketRenderer.translateToFace(matrices,
+								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
+						matrices.multiply(new Quaternion(0, 0, 180, true));
+						matrices.scale(0.75F, 0.75F, 0.75F);
+						matrices.translate(0, -0.05, 0.4);
+						MinecraftClient.getInstance().getItemRenderer()
+								.renderItem(stack, ModelTransformation.Mode.HEAD, light, OverlayTexture.DEFAULT_UV, matrices,
 										vertexConsumers, 0);
 					}
 				});

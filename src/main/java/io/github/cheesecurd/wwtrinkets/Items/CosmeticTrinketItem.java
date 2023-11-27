@@ -1,5 +1,6 @@
 package io.github.cheesecurd.wwtrinkets.Items;
 
+import com.google.common.collect.Multimap;
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
 import dev.emi.trinkets.api.client.TrinketRenderer;
@@ -10,6 +11,9 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -19,6 +23,8 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+
+import java.util.UUID;
 
 public class CosmeticTrinketItem extends TrinketItem implements IAnimatable, TrinketRenderer
 {
@@ -32,6 +38,13 @@ public class CosmeticTrinketItem extends TrinketItem implements IAnimatable, Tri
 		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
 
 		return PlayState.CONTINUE;
+	}
+
+	@Override
+	public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid)
+	{
+		var modifiers = super.getModifiers(stack, slot, entity, uuid);
+		return modifiers;
 	}
 
 	@Override

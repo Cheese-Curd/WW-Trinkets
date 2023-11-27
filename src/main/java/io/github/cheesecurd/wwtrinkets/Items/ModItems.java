@@ -84,5 +84,11 @@ public class ModItems
 			new Item(new FabricItemSettings()
 					.group(WWTrinkets.TAB)));
 
+	// Cosmetics
+	public static final Item tophat = createItem("tophat",
+			new TopHatItem(new FabricItemSettings()
+					.group(WWTrinkets.TAB)
+					.maxCount(1)));
+
 	public static void registerItems() {}
 }
