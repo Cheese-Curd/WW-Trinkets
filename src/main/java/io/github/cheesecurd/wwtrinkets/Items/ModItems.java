@@ -85,10 +85,11 @@ public class ModItems
 					.group(WWTrinkets.TAB)));
 
 	// Cosmetics
-	public static final Item tophat = createItem("tophat",
-			new TopHatItem(new FabricItemSettings()
-					.group(WWTrinkets.TAB)
-					.maxCount(1)));
+	// Fuck off, why are you giving me a speed boost
+//	public static final Item tophat = createItem("tophat",
+//			new TopHatItem(new FabricItemSettings()
+//					.group(WWTrinkets.TAB)
+//					.maxCount(1)));
 
 	public static void registerItems() {}
 }

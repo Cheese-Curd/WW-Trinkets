@@ -43,8 +43,8 @@ public class GasMask extends CosmeticTrinketItem
 	{
 		var modifiers = super.getModifiers(stack, slot, entity, uuid);
 		// Upsides
-		modifiers.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, new EntityAttributeModifier(uuid, "wwtrinkets:extra_health", .15, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
-		modifiers.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(uuid, "wwtrinkets:extra_health", .15, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+		modifiers.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, new EntityAttributeModifier(uuid, "wwtrinkets:speed", .15, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+		modifiers.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(uuid, "wwtrinkets:attack_speed", .15, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
 		return modifiers;
 	}
 
