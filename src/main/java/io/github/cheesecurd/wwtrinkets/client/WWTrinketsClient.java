@@ -46,7 +46,7 @@ public class WWTrinketsClient implements ClientModInitializer
 						TrinketRenderer.translateToFace(matrices,
 								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
 						matrices.scale(0.62F, 0.62F, 0.62F);
-						matrices.translate(0, 0, 0.5F);
+						matrices.translate(0, -0.02, 0.5F);
 						matrices.multiply(new Quaternion(0, 0, 180, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.HEAD, light, OverlayTexture.DEFAULT_UV, matrices,
