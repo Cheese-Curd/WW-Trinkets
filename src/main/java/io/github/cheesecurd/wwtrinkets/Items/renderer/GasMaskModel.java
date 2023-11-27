@@ -8,7 +8,7 @@ import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
 public class GasMaskModel extends AnimatedGeoModel<GasMask> {
 	@Override
 	public Identifier getModelResource(GasMask object) {
-		return new Identifier("wwtrikets", "geckolib/gas_mask.geo.json");
+		return new Identifier("wwtrikets", "geo/gas_mask.geo.json");
 	}
 
 	@Override

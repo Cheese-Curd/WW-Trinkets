@@ -38,26 +38,27 @@ public class ModItems
 					.group(WWTrinkets.TAB)));
 
 	// Hazmat Suit
-	public static final Item hazmat_hood = createItem("hazmat_hood",
-			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD,
-					new FabricItemSettings()
-							.group(WWTrinkets.TAB)
-							.maxCount(1)));
-	public static final Item hazmat_suit = createItem("hazmat_suit",
-			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.CHEST,
-					new FabricItemSettings()
-							.group(WWTrinkets.TAB)
-							.maxCount(1)));
-	public static final Item hazmat_pants = createItem("hazmat_pants",
-			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.LEGS,
-					new FabricItemSettings()
-							.group(WWTrinkets.TAB)
-							.maxCount(1)));
-	public static final Item hazmat_boots = createItem("hazmat_boots",
-			new HazMatSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.FEET,
-					new FabricItemSettings()
-							.group(WWTrinkets.TAB)
-							.maxCount(1)));
+	// Looked like shit anyways
+//	public static final Item hazmat_hood = createItem("hazmat_hood",
+//			new HazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.HEAD,
+//					new FabricItemSettings()
+//							.group(WWTrinkets.TAB)
+//							.maxCount(1)));
+//	public static final Item hazmat_suit = createItem("hazmat_suit",
+//			new HazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.CHEST,
+//					new FabricItemSettings()
+//							.group(WWTrinkets.TAB)
+//							.maxCount(1)));
+//	public static final Item hazmat_pants = createItem("hazmat_pants",
+//			new HazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.LEGS,
+//					new FabricItemSettings()
+//							.group(WWTrinkets.TAB)
+//							.maxCount(1)));
+//	public static final Item hazmat_boots = createItem("hazmat_boots",
+//			new HazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.FEET,
+//					new FabricItemSettings()
+//							.group(WWTrinkets.TAB)
+//							.maxCount(1)));
 
 	// Cursed Ring of The Aesir
 	public static final Item zumo_ring = createItem("zumo_ring",

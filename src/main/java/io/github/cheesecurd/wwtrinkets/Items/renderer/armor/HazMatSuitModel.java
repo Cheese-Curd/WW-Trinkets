@@ -8,12 +8,12 @@ public class HazMatSuitModel extends AnimatedGeoModel<HazMatSuitItem>
 {
 	@Override
 	public Identifier getModelResource(HazMatSuitItem object) {
-		return new Identifier("wwtrinkets", "geckolib/hazmat_suit.geo.json");
+		return new Identifier("wwtrinkets", "geo/hazmat_suit.geo.json");
 	}
 
 	@Override
 	public Identifier getTextureResource(HazMatSuitItem object) {
-		return new Identifier("wwtrinkets", "textures/armor/hazMatSuit.png");
+		return new Identifier("wwtrinkets", "textures/armor/hazmat_suit.png");
 	}
 
 	@Override

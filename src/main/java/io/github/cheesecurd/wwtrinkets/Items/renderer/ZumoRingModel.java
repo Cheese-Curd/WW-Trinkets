@@ -7,7 +7,7 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class ZumoRingModel extends AnimatedGeoModel<ZumoRing> {
 	@Override
 	public Identifier getModelResource(ZumoRing object) {
-		return new Identifier("wwtrikets", "geckolib/zumo_ring.geo.json");
+		return new Identifier("wwtrikets", "geo/zumo_ring.geo.json");
 	}
 
 	@Override
