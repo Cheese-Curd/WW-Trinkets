@@ -86,10 +86,10 @@ public class ModItems
 
 	// Cosmetics
 	// Fuck off, why are you giving me a speed boost
-//	public static final Item tophat = createItem("tophat",
-//			new TopHatItem(new FabricItemSettings()
-//					.group(WWTrinkets.TAB)
-//					.maxCount(1)));
+	public static final Item tophat = createItem("tophat",
+			new TopHatItem(new FabricItemSettings()
+					.group(WWTrinkets.TAB)
+					.maxCount(1)));
 
 	public static void registerItems() {}
 }
