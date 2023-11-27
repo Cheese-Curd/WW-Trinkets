@@ -25,8 +25,7 @@ public class TopHatItem extends CosmeticTrinketItem
 	@Override // STOP GIVING ME A FUCKING SPEEDBOOST WTF
 	public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid)
 	{
-		var modifiers = super.getModifiers(stack, slot, entity, uuid); // bro why the FUCK do I have to do this????
-		modifiers.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, new EntityAttributeModifier(uuid, "wwtrinkets:speed", 0, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+		var modifiers = super.getModifiers(stack, slot, entity, uuid); // bro FUCK OFF
 		return modifiers;
 	}
 
