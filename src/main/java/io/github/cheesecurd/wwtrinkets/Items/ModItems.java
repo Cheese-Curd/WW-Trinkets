@@ -59,6 +59,27 @@ public class ModItems
 					new FabricItemSettings()
 							.group(WWTrinkets.TAB)
 							.maxCount(1)));
+	// Cold vers
+	public static final Item coldhazmat_hood = createItem("coldhazmat_hood",
+			new ColdHazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.HEAD,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+	public static final Item coldhazmat_suit = createItem("coldhazmat_suit",
+			new ColdHazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.CHEST,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+	public static final Item coldhazmat_pants = createItem("coldhazmat_pants",
+			new ColdHazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.LEGS,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+	public static final Item coldhazmat_boots = createItem("coldhazmat_boots",
+			new ColdHazMatSuitItem(ModArmorMaterials.HAZMAT, EquipmentSlot.FEET,
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
 
 	// Cursed Ring of The Aesir
 	public static final Item zumo_ring = createItem("zumo_ring",
@@ -72,9 +93,28 @@ public class ModItems
 
 	// Golden Gauntlet
 	public static final Item golden_gauntlet = createItem("golden_gauntlet",
-			new Gauntlet(new FabricItemSettings()
+			new Gauntlet("",
+					new FabricItemSettings()
 					.group(WWTrinkets.TAB)
 					.maxCount(1)));
+
+	public static final Item sculk_gauntlet = createItem("sculk_gauntlet",
+			new Gauntlet("sculk",
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+
+	public static final Item amethyst_gauntlet = createItem("amethyst_gauntlet",
+			new Gauntlet("amethyst",
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
+
+	public static final Item fnuuy_gauntlet = createItem("fnuuy_gauntlet",
+			new Gauntlet("fnuuy",
+					new FabricItemSettings()
+							.group(WWTrinkets.TAB)
+							.maxCount(1)));
 
 	public static final Item amethyst_gem = createItem("amethyst_gem",
 			new Item(new FabricItemSettings()

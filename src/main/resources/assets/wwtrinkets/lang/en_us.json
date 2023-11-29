@@ -13,7 +13,19 @@
   "effect.wwtrinkets.suffocate": "Suffocation Resistance",
   "effect.wwtrinkets.starvation": "Starvation Resistance",
 
-  "item.wwtrinkets.golden_gauntlet": "Golden Gauntlet",
-  "item.wwtrinkets.amethyst_gem": "Amethyst Gem",
-  "item.wwtrinkets.sculk_gem": "Sculk Gem"
+  "item.wwtrinkets.golden_gauntlet": "§6§lGolden Gauntlet",
+  "item.wwtrinkets.sculk_gauntlet": "§6§lGolden Gauntlet §3[Sculk]",
+  "item.wwtrinkets.amethyst_gauntlet": "§6§lGolden Gauntlet §d[Amethyst]",
+  "item.wwtrinkets.fnuuy_gauntlet": "§eyellow glove",
+  "item.wwtrinkets.amethyst_gem": "§dAmethyst Gem",
+  "item.wwtrinkets.sculk_gem": "§3Sculk Gem",
+
+  "item.wwtrinkets.hazmat_hood": "Hazmat Suit Hood",
+  "item.wwtrinkets.hazmat_suit": "Hazmat Suit Body",
+  "item.wwtrinkets.hazmat_pants": "Hazmat Suit Pants",
+  "item.wwtrinkets.hazmat_boots": "Hazmat Suit Boots",
+  "item.wwtrinkets.coldhazmat_hood": "Cold Resistant Hazmat Suit Hood",
+  "item.wwtrinkets.coldhazmat_suit": "Cold Resistant Hazmat Suit Body",
+  "item.wwtrinkets.coldhazmat_pants": "Cold Resistant Hazmat Suit Pants",
+  "item.wwtrinkets.coldhazmat_boots": "Cold Resistant Hazmat Suit Boots"
 }

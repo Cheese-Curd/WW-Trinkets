@@ -4,9 +4,9 @@
     "item": "wwtrinkets:golden_gauntlet"
   },
   "addition": {
-    "item": "wwtrinkets:sculk_gem"
+    "item": "wwtrinkets:amethyst_gem"
   },
   "result": {
-    "item": "wwtrinkets:sculk_gauntlet"
+    "item": "wwtrinkets:amethyst_gauntlet"
   }
 }

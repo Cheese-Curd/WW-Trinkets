@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "wwtrinkets:golden_gauntlet"
+    "wwtrinkets:golden_gauntlet",
+    "wwtrinkets:sculk_gauntlet",
+    "wwtrinkets:amethyst_gauntlet",
+    "wwtrinkets:fnuuy_gauntlet"
   ]
 }

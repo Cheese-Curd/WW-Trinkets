@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "deeperdarker:soul_crystal"
+    },
+    "result": "wwtrinkets:sculk_gem",
+    "count": 1
+}

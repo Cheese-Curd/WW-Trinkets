@@ -3,7 +3,8 @@
   "package": "io.github.cheesecurd.wwtrinkets.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "ArmorItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -4,8 +4,10 @@ import dev.emi.trinkets.api.client.TrinketRenderer;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import io.github.cheesecurd.wwtrinkets.Items.ModItems;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.GasMaskRenderer;
+import io.github.cheesecurd.wwtrinkets.Items.renderer.GoldenGauntletRenderer;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.TopHatRenderer;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.ZumoRingRenderer;
+import io.github.cheesecurd.wwtrinkets.Items.renderer.armor.ColdHazMatSuitRenderer;
 import io.github.cheesecurd.wwtrinkets.Items.renderer.armor.HazMatSuitRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
@@ -34,11 +36,19 @@ public class WWTrinketsClient implements ClientModInitializer
 				ModItems.hazmat_suit,
 				ModItems.hazmat_pants,
 				ModItems.hazmat_boots);
+		GeoArmorRenderer.registerArmorRenderer(new ColdHazMatSuitRenderer(),
+				ModItems.coldhazmat_hood,
+				ModItems.coldhazmat_suit,
+				ModItems.coldhazmat_pants,
+				ModItems.coldhazmat_boots);
 
 		// Create GeckoLib Item Render
 		GeoItemRenderer.registerItemRenderer(ModItems.gas_mask, new GasMaskRenderer());
-//		GeoItemRenderer.registerItemRenderer(ModItems.golden_gauntlet, new GoldenGauntletRenderer());
 		GeoItemRenderer.registerItemRenderer(ModItems.zumo_ring, new ZumoRingRenderer());
+		GeoItemRenderer.registerItemRenderer(ModItems.golden_gauntlet, new GoldenGauntletRenderer("golden"));
+		GeoItemRenderer.registerItemRenderer(ModItems.sculk_gauntlet, new GoldenGauntletRenderer("golden"));
+		GeoItemRenderer.registerItemRenderer(ModItems.amethyst_gauntlet, new GoldenGauntletRenderer("golden"));
+		GeoItemRenderer.registerItemRenderer(ModItems.fnuuy_gauntlet, new GoldenGauntletRenderer("fnuuy"));
 		// Cosmetics
 		GeoItemRenderer.registerItemRenderer(ModItems.tophat, new TopHatRenderer());
 
@@ -63,6 +73,58 @@ public class WWTrinketsClient implements ClientModInitializer
 								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player);
 						matrices.scale(1.25F, 1.25F, 1.25F);
 						matrices.translate(0, -0.1, -0.05);
+						MinecraftClient.getInstance().getItemRenderer()
+								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,
+										vertexConsumers, 0);
+					}
+				});
+		TrinketRendererRegistry.registerRenderer(ModItems.golden_gauntlet,
+				(stack, slotReference, contextModel, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch) -> {
+					if (entity instanceof AbstractClientPlayerEntity player) {
+						TrinketRenderer.translateToLeftArm(matrices,
+								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player);
+						matrices.scale(1F, 1F, 1F);
+						matrices.translate(0, 0, -0.128);
+						matrices.multiply(new Quaternion(-90, 180, 0, true));
+						MinecraftClient.getInstance().getItemRenderer()
+								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,
+										vertexConsumers, 0);
+					}
+				});
+		TrinketRendererRegistry.registerRenderer(ModItems.sculk_gauntlet,
+				(stack, slotReference, contextModel, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch) -> {
+					if (entity instanceof AbstractClientPlayerEntity player) {
+						TrinketRenderer.translateToLeftArm(matrices,
+								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player);
+						matrices.scale(1F, 1F, 1F);
+						matrices.translate(0, 0, -0.128);
+						matrices.multiply(new Quaternion(-90, 180, 0, true));
+						MinecraftClient.getInstance().getItemRenderer()
+								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,
+										vertexConsumers, 0);
+					}
+				});
+		TrinketRendererRegistry.registerRenderer(ModItems.amethyst_gauntlet,
+				(stack, slotReference, contextModel, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch) -> {
+					if (entity instanceof AbstractClientPlayerEntity player) {
+						TrinketRenderer.translateToLeftArm(matrices,
+								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player);
+						matrices.scale(1F, 1F, 1F);
+						matrices.translate(0, 0, -0.128);
+						matrices.multiply(new Quaternion(-90, 180, 0, true));
+						MinecraftClient.getInstance().getItemRenderer()
+								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,
+										vertexConsumers, 0);
+					}
+				});
+		TrinketRendererRegistry.registerRenderer(ModItems.fnuuy_gauntlet,
+				(stack, slotReference, contextModel, matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch) -> {
+					if (entity instanceof AbstractClientPlayerEntity player) {
+						TrinketRenderer.translateToLeftArm(matrices,
+								(PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player);
+						matrices.scale(1F, 1F, 1F);
+						matrices.translate(0, 0, -0.128);
+						matrices.multiply(new Quaternion(-90, 180, 0, true));
 						MinecraftClient.getInstance().getItemRenderer()
 								.renderItem(stack, ModelTransformation.Mode.THIRD_PERSON_LEFT_HAND, light, OverlayTexture.DEFAULT_UV, matrices,
 										vertexConsumers, 0);
