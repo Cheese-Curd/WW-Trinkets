@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#D#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "frostiful:fur"
+        },
+        "D": {
+            "item": "wwtrinkets:hazmat_boots"
+        }
+    },
+    "result": {
+        "item": "wwtrinkets:coldhazmat_boots",
+        "count": 1
+    }
+}

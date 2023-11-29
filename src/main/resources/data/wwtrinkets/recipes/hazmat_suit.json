@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:dried_kelp"
+        }
+    },
+    "result": {
+        "item": "wwtrinkets:hazmat_suit",
+        "count": 1
+    }
+}
